@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using UI.Models;
+using CleanPeopleList.Domain.Interfaces;
 
 namespace UI.Controllers
 {
@@ -13,9 +14,10 @@ namespace UI.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index([FromServices] IGetListadoPersonasUseCase getListadoPersonasUseCase)
         {
-            return View();
+            var personas = getListadoPersonasUseCase.Execute();
+            return View(personas);
         }
 
         public IActionResult Privacy()

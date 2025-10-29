@@ -1,7 +1,14 @@
+using CleanPeopleList.Domain.Interfaces;
+using CleanPeopleList.Domain.Repositories;
+using CompositioRoot.Dependencias;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddListadoPersonasDependencies();
+
 
 var app = builder.Build();
 

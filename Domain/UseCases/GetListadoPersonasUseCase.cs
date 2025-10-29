@@ -14,17 +14,9 @@ namespace CleanPeopleList.Domain.UseCases
     // Implementación del caso de uso IGetListadoPersonasUseCase
     public class GetListadoPersonasUseCase : IGetListadoPersonasUseCase
     {
-        // Campo privado con guion bajo delante
         private readonly IPersonaRepository _personaRepository;
 
-        // Constructor vacío requerido
-        // OJO: esto deja _personaRepository en null si lo usas sin inyectar.
-        // En runtime normal usaremos el otro constructor con inyección.
-        public GetListadoPersonasUseCase()
-        {
-        }
 
-        // Constructor principal con inyección de dependencias
         public GetListadoPersonasUseCase(IPersonaRepository personaRepository)
         {
             _personaRepository = personaRepository;
@@ -32,14 +24,7 @@ namespace CleanPeopleList.Domain.UseCases
 
         public IEnumerable<Persona> Execute()
         {
-            // Protección básica por si alguien usa el constructor vacío
-            // y no ha inyectado repositorio (evitamos null reference).
-            // En clase puedes dejarlo o quitarlo, pero así no peta.
-            if (_personaRepository == null)
-            {
-                return new List<Persona>();
-            }
-
+            
             return _personaRepository.GetAll();
         }
     }
