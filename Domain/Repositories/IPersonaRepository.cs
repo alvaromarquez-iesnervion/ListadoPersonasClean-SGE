@@ -11,6 +11,6 @@ namespace CleanPeopleList.Domain.Repositories
     public interface IPersonaRepository
     {
         IEnumerable<Persona> GetAll();
-        Persona? GetById(int id);
+        
     }
 }

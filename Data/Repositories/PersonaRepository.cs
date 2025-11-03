@@ -17,19 +17,12 @@ namespace CleanPeopleList.Data.Repositories
             new Persona(4, "Carlos", "Ruiz Delgado"),
         };
 
-        // Constructor vacío requerido
-        public PersonaRepository()
-        {
-        }
+
 
         public IEnumerable<Persona> GetAll()
         {
             return _personas;
         }
 
-        public Persona? GetById(int id)
-        {
-            return _personas.FirstOrDefault(p => p.Id == id);
-        }
     }
 }
