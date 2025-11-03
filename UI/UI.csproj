@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CompositioRoot\CompositioRoot.csproj" />
+    <ProjectReference Include="..\CompositioRoot\CompositionRoot.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
